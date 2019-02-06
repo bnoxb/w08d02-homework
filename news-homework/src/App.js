@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Login from './Login/Login';
-
+import NewsContainer from './NewsContainer/NewsContainer';
 
 class App extends Component {
   constructor () {
@@ -20,10 +20,11 @@ class App extends Component {
       username: username,
     })
   }
+
   render() {
     return (
       <div className="App">
-        <Login handleLogin={this.handleLogin}/>
+        {this.state.logged ? <NewsContainer /> : <Login handleLogin={this.handleLogin}/>}
         
       </div>
     );
